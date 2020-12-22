@@ -1,19 +1,13 @@
 package Shapes;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component("MyPoint")
-@Scope("singleton")
 public class Point implements Shape{
 
 
     private Float x;
     private Float y;
 
-    @Autowired
     public Point(Coords coords) {
         this.x = coords.getX();
         this.y = coords.getY();

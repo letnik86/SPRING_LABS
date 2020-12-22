@@ -2,11 +2,7 @@ package Shapes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component("Circle")
-@Scope("prototype")
 public class Circle implements Shape {
 
     private Float x;
@@ -14,7 +10,6 @@ public class Circle implements Shape {
     @Value("#{T(java.lang.Math).sqrt(T(java.lang.Math).pow(MyPoint.x, 2) + T(java.lang.Math).pow(MyPoint.y, 2))}")
     private Float r;
 
-    @Autowired
     public Circle(Coords centerCoords){
         this.x = centerCoords.getX();
         this.y = centerCoords.getY();
