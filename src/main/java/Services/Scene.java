@@ -15,15 +15,15 @@ public class Scene {
     private Shape Circle;
 
     @Autowired
-    private Shape Point;
+    private Shape MyPoint;
 
     public Scene() {}
 
 
     public void draw()    {
         System.out.println("Цвет сцены - " + color);
-        System.out.println(Point.draw());
-        System.out.println(Point.draw());
+        System.out.println(MyPoint.draw());
+        System.out.println(MyPoint.draw());
         System.out.println(Circle.draw());
         System.out.println(Circle.draw());
         System.out.println("Конец Scene");

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 @Component("coords")
 @Scope("prototype")
 public class Coords {
-    @Value("8")
+    @Value("#{T(java.lang.Math).random * 999}")
     private Float x;
-    @Value("9")
+    @Value("#{T(java.lang.Math).random * 999}")
     private Float y;
 
     public Float getX() {
