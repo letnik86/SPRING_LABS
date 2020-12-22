@@ -37,6 +37,6 @@ public class Point implements Shape{
 
     @Override
     public String draw(){
-        return ("Точка с координатами X = " + x + "; Y = " + y + " нарисована!");
+        return ("Точка с координатами X = " + x + "; Y = " + y + " нарисована! " + this.toString());
     }
 }

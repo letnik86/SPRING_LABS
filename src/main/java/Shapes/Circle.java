@@ -14,6 +14,7 @@ public class Circle implements Shape {
     @Value("5")
     private Float r;
 
+    @Autowired
     public Circle(Coords centerCoords){
         this.x = centerCoords.getX();
         this.y = centerCoords.getY();
@@ -45,6 +46,6 @@ public class Circle implements Shape {
     }
     @Override
     public String draw(){
-        return ("Окружность с координатами X = " + x + "; Y = " + y + "; и радиусом R = " + r + " нарисована!");
+        return ("Окружность с координатами X = " + x + "; Y = " + y + "; и радиусом R = " + r + " нарисована! " + this.toString());
     }
 }

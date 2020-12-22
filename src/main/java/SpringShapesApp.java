@@ -19,5 +19,15 @@ public class SpringShapesApp {
        ApplicationContext context = new AnnotationConfigApplicationContext(SpringShapesApp.class);
        Scene scene = context.getBean(Scene.class);
        scene.draw();
+       Circle circle1 = context.getBean(Circle.class);
+       System.out.println(circle1.draw());
+       Circle circle2 = context.getBean(Circle.class);
+       System.out.println(circle2.draw());
+       Point point1 = context.getBean(Point.class);
+       System.out.println(point1.draw());
+       Point point2 = context.getBean(Point.class);
+       System.out.println(point2.draw());
+
+
    }
 }

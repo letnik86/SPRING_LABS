@@ -22,15 +22,11 @@ public class Scene {
 
     public void draw()    {
         System.out.println("Цвет сцены - " + color);
-        System.out.printf(Point.draw() + " ");
-        System.out.println(Point.toString());
-        System.out.printf(Point.draw() + " ");
-        System.out.println(Point.toString());
-        System.out.printf(Circle.draw() + " ");
-        System.out.println(Circle.toString());
-        System.out.printf(Circle.draw() + " ");
-        System.out.println(Circle.toString());
-        System.out.println("Далее печатаем список:");
+        System.out.println(Point.draw());
+        System.out.println(Point.draw());
+        System.out.println(Circle.draw());
+        System.out.println(Circle.draw());
+        System.out.println("Конец Scene");
     }
 
     public String getColor() {
