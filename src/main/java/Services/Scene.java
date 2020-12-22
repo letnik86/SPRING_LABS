@@ -1,22 +1,36 @@
 package Services;
 
 import Shapes.Shape;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-import java.util.List;
-
+@Component
 public class Scene {
+
+    @Value("Красный")
     private String color;
 
-    public Scene(String color) {
-        this.color = color;
-    }
+    @Autowired
+    private Shape Circle;
 
-    private List<Shape> shapes;
+    @Autowired
+    private Shape Point;
+
+    public Scene() {}
+
+
     public void draw()    {
         System.out.println("Цвет сцены - " + color);
-        for (Shape shape : shapes) {
-            System.out.println(shape.draw());
-        }
+        System.out.printf(Point.draw() + " ");
+        System.out.println(Point.toString());
+        System.out.printf(Point.draw() + " ");
+        System.out.println(Point.toString());
+        System.out.printf(Circle.draw() + " ");
+        System.out.println(Circle.toString());
+        System.out.printf(Circle.draw() + " ");
+        System.out.println(Circle.toString());
+        System.out.println("Далее печатаем список:");
     }
 
     public String getColor() {
@@ -27,11 +41,4 @@ public class Scene {
         this.color = color;
     }
 
-    public List<Shape> getShapes() {
-        return shapes;
-    }
-
-    public void setShapes(List<Shape> shapes) {
-        this.shapes = shapes;
-    }
 }
