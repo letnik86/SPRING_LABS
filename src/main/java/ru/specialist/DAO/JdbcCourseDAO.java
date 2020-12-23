@@ -29,6 +29,8 @@ public class JdbcCourseDAO implements CourseDAO {
 			 "SELECT id, title, length, description FROM courses";
 	private static final String SQL_SELECT_COURSE_BY_ID =
 			SQL_SELECT_COURSE+" WHERE id = ?";
+	private static final String SQL_SELECT_COURSE_BY_TITLE =
+			SQL_SELECT_COURSE+" WHERE title LIKE ?";
 	private static final String SQL_INSERT_COURSE =
 			"INSERT INTO Courses (title,length,description) VALUES (:title, :length, :description)";
 	
@@ -65,10 +67,16 @@ public class JdbcCourseDAO implements CourseDAO {
 
 	public Course findById(int id) {
 		Course course = (Course)getJdbcTemplate().queryForObject(
-				SQL_SELECT_COURSE_BY_ID, new Object[] { id }, 
+				SQL_SELECT_COURSE_BY_ID,
+				new Object[] { id },
 				new CourseRowMapper());		
 		return course;
 				 
+	}
+
+	public List<Course> findByTitle(String title){
+		List<Course> courses = getJdbcTemplate().query(SQL_SELECT_COURSE_BY_TITLE, new Object[]{ title} , new BeanPropertyRowMapper(Course.class));
+		return courses;
 	}
 
 }
