@@ -43,9 +43,10 @@ public class HibernateCourseDAO implements CourseDAO {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Course> findByName(String title) {
-		// 
-		return null;
+		return getSessionFactory().getCurrentSession().
+				createQuery("from Course c WHERE title LIKE :title").setParameter("title",title).list();
 	}
 
 	@Override

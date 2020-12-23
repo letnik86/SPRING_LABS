@@ -19,14 +19,17 @@ public class App
 //		spring.setLength(40);
 //		spring.setDescription("Spring framework");
 //		courseDao.insert(spring);
-		//courseDao.delete(8);
+//		courseDao.delete(8);
 //
-		for(Course c : courseDao.findAll())
+//		for(Course c : courseDao.findAll())
+//			System.out.println(c);
+//		Course c8 = courseDao.findById(8);
+//		System.out.println( c8 );
+//		c8.setLength(45);
+//		courseDao.update(c8);
+
+		for(Course c : courseDao.findByName("%Web%"))
 			System.out.println(c);
-		//Course c8 = courseDao.findById(8);
-		//System.out.println( c8 );
-		//c8.setLength(45);
-		//courseDao.update(c8);
 
 		context.close();    
 	}
