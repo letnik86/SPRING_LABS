@@ -44,11 +44,9 @@
 					<td>${teacher.name}</td>
 					<td>${teacher.addr}</td>
 					<td>${teacher.phone}</td>
-					<td><a href="update/${teacher.id}">Изменить</a></td>
-					<td><a href="delete/${teacher.id}">Удалить</a></td>
 					<s:authorize access="hasRole('ROLE_USER')">
-					
-
+						<td><a href="update/${teacher.id}">Изменить</a></td>
+						<td><a href="delete/${teacher.id}">Удалить</a></td>
 					</s:authorize>
 				</tr>
 			</c:forEach>

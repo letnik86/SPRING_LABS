@@ -44,11 +44,9 @@
 					<td>${course.title}</td>
 					<td>${course.length}</td>
 					<td>${course.description}</td>
-					<td><a href="update/${course.id}">Изменить</a></td>
-					<td><a href="delete/${course.id}">Удалить</a></td>
 					<s:authorize access="hasRole('ROLE_USER')">
-					
-
+						<td><a href="update/${course.id}">Изменить</a></td>
+						<td><a href="delete/${course.id}">Удалить</a></td>
 					</s:authorize>
 				</tr>
 			</c:forEach>
