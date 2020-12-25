@@ -34,7 +34,7 @@
 				<td>Имя</td>
 				<td>Адрес</td>
 				<td>Телефона</td>
-				<s:authorize access="hasRole('ROLE_USER')">
+				<s:authorize access="hasRole('ROLE_ADMIN')">
 					<td></td>
 					<td></td>
 				</s:authorize>
@@ -44,7 +44,7 @@
 					<td>${teacher.name}</td>
 					<td>${teacher.addr}</td>
 					<td>${teacher.phone}</td>
-					<s:authorize access="hasRole('ROLE_USER')">
+					<s:authorize access="hasRole('ROLE_ADMIN')">
 						<td><a href="update/${teacher.id}">Изменить</a></td>
 						<td><a href="delete/${teacher.id}">Удалить</a></td>
 					</s:authorize>
@@ -52,7 +52,7 @@
 			</c:forEach>
 		</table>
 	</c:if>
-	<s:authorize access="hasRole('ROLE_USER')">
+	<s:authorize access="hasRole('ROLE_ADMIN')">
 		<a href="update/0">Добавить...</a>
 	</s:authorize>
 </body>

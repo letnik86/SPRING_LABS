@@ -36,27 +36,28 @@ public class TeacherController {
         return "teachers/list";
     }
 
-    //@PreAuthorize("isAuthenticated()")
 
-    @PreAuthorize("hasRole('ROLE_USER')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "delete/{id}",method = RequestMethod.GET)
     public String delete(@PathVariable("id") int id, Model uiModel) {
         if (teacherService.findById(id)!=null)
             teacherService.delete(id);
         return "redirect:/teachers/";
     }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "update/{id}",method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") int id, Model uiModel) {
         uiModel.addAttribute ("teacher", teacherService.findById(id));
         return "teachers/edit";
     }
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "update/0",method = RequestMethod.GET)
     public String newForm( Model uiModel) {
         return "teachers/edit";
     }
 
-    //@PreAuthorize("isAuthenticated()")
-    @PreAuthorize("hasRole('ROLE_USER')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "update/{id}", method = RequestMethod.POST)
     public String update(Teacher teacher, BindingResult bindingResult,
                          Model uiModel, HttpServletRequest httpServletRequest,
